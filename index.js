@@ -566,7 +566,9 @@ const airports = [
 // let myFunction = function () {
 // console.log("Function was invoked!");
 // };
-// myFunction();
+myFunction = ()=> {return "hello World!";
+  }
+console.log(myFunction());
 
 
 // let anotherFunction = function (param) {

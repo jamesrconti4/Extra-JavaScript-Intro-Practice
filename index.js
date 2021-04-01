@@ -10,7 +10,7 @@ const airports = [
       "country": "French Polynesia",
       "woeid": "12512819",
       "tz": "Pacific\/Midway",
-      "phone": "",
+      "phone": "696969",
       "type": "Airports",
       "email": "",
       "url": "",
@@ -609,9 +609,9 @@ Take the function above a step further - you have dollars and you are visiting t
 1 usd === 1.66 Bulgarian Lev 
 1 usd === 27.7 Ukrainian hryvnia */
 convertUSD=function(usd,country){
-  if (country==='euro'){
+  if (country==='Germany'){
     let exchange=usd*0.85;
-    return `your exchange rate for ${usd} dollars in the Euro Zone will be ${exchange} euros `
+    return `your exchange rate for ${usd} dollars in Germany will be ${exchange} euros `
   }
   else if(country==='British Pounds'){
     let exchange=usd*0.77;
@@ -626,20 +626,55 @@ convertUSD=function(usd,country){
   else if (country==='Ukrainian hryvnia'){
         let exchange=usd*27.7;
         return `your exchange rate for ${usd} dollars in the Ukraine will be ${exchange} Ukrainian hryvnia `}
-  else return 'that country is not on your list'
+  else{ 
+    return 'that country is not on your list'}
 };
-console.log(convertUSD(10,'Bulgarian Lev'));
+console.log(convertUSD(10,'Turkish Lira'));
 
 
 /*TASK 3 🚀
 /// Write a function that takes an airport code and returns the city, country of that airport 
-// find the following codes AAA, ABZ, ABX, ABT, ACA */
+// find the following codes AAA, ABZ, ABX, ABT, ACA
+{
+      "code": "AAA",
+      "lat": "-17.3595",
+      "lon": "-145.494",
+      "name": "Anaa Airport",
+      "city": "Anaa",
+      "state": "Tuamotu-Gambier",
+      "country": "French Polynesia",
+      "woeid": "12512819",
+      "tz": "Pacific\/Midway",
+      "phone": "",
+      "type": "Airports",
+      "email": "",
+      "url": "",
+      "runway_length": "4921",
+      "elev": "7",
+      "icao": "NTGA",
+      "direct_flights": "2",
+      "carriers": "1"
+    },
+*/
 
-
+airportCode= function(code){
+  for(let i=0; i<airports.length; i++){
+    if (airports[i].code===code){
+      return `${airports[i].city}, ${airports[i].country}`
+    }
+}
+}
+console.log(airportCode('AAA'))
+/*Loop through arrays, else if*/
 /*TASK 4 🚀 
-// Write a function to that will find the phone number for an airport in a given city  */
-
-
+// Write a function to that will return the phone number for an airport when given a city  */
+function phoneNumber(city){
+  for(let i=0; i<airports.length; i++)
+  if(airports[i].city===city){
+    return airports[i].phone
+  }
+}
+console.log(phoneNumber('Anaa'))
 
 /*TASK 5 🚀 
 // Write a function that will return all the airports in a given country  */

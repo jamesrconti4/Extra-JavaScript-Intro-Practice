@@ -575,32 +575,60 @@ console.log(myFunction());
 //   return param;
 // };
 // anotherFunction("Example");
-
+anotherFunction= (x)=> {return x};
+console.log(anotherFunction('Hello There!'));
 
 // let add = function (param1, param2) {
 //   return param1 + param2;
 // };
 // add(1,2);
-
+add=(z,y)=> {return z+y};
+console.log(add(1,2));
 
 // let subtract = function (param1, param2) {
 //   return param1 - param2;
 // };
 // subtract(1,2);
-
+subtract=(q,p)=> {return q-p};
+console.log(subtract(1,2));
 
 /* Work out 💪 */
 /* TASK 1 🚀 
-// Dollars to Euros - write a function that will take an amount of dollars (USD) and change it  into euros (EUR) - with the current exchange rate 1 USD === .85 EUR */
+Dollars to Euros - write a function that will take an amount of dollars (USD) and change it  into euros (EUR) - with the current exchange rate 1 USD === .85 EUR*/
 
+ convertEUR=function(usd){
+  return usd*0.85;
+}
+console.log(convertEUR(1));
 
 /* TASK 2 🚀 
-// Take the function above a step further - you have dollars and you are visiting the following 5 countries: Britan, Germany, Turkey, Bulgaria and Ukraine - you need to write a function that will take a dollar amount, and a country and return the exchange rate for that country - the function should return a string that says `your exchange rate for dollarAmount dollars in country will be exchangeRate currencyInitals ` If the country is not on your list your string should return 'that country is not on your list'
-// 1 usd === 0.85 euro
-// 1 usd === 0.77 British Pounds
-// 1 usd === 6.96 Turkish Lira 
-// 1 usd === 1.66 Bulgarian Lev 
-// 1 usd === 27.7 Ukrainian hryvnia */
+Take the function above a step further - you have dollars and you are visiting the following 5 countries: Britan, Germany, Turkey, Bulgaria and Ukraine - you need to write a function that will take a dollar amount, and a country and return the exchange rate for that country - the function should return a string that says `your exchange rate for dollarAmount dollars in country will be exchangeRate currencyInitals ` If the country is not on your list your string should return 'that country is not on your list'
+1 usd === 0.85 euro
+ 1 usd === 0.77 British Pounds
+ 1 usd === 6.96 Turkish Lira 
+1 usd === 1.66 Bulgarian Lev 
+1 usd === 27.7 Ukrainian hryvnia */
+convertUSD=function(usd,country){
+  if (country==='euro'){
+    let exchange=usd*0.85;
+    return `your exchange rate for ${usd} dollars in the Euro Zone will be ${exchange} euros `
+  }
+  else if(country==='British Pounds'){
+    let exchange=usd*0.77;
+    return `your exchange rate for ${usd} dollars in Britain will be ${exchange} Pounds `
+  }
+  else if (country==='Turkish Lira'){
+    let exchange=usd*6.96;
+    return `your exchange rate for ${usd} dollars in Turkey will be ${exchange} Lira `}
+  else if (country==='Bulgarian Lev'){
+      let exchange=usd*1.66
+      return `your exchange rate for ${usd} dollars in Bulgaria will be ${exchange} Lev `}
+  else if (country==='Ukrainian hryvnia'){
+        let exchange=usd*27.7;
+        return `your exchange rate for ${usd} dollars in the Ukraine will be ${exchange} Ukrainian hryvnia `}
+  else return 'that country is not on your list'
+};
+console.log(convertUSD(10,'Bulgarian Lev'));
 
 
 /*TASK 3 🚀

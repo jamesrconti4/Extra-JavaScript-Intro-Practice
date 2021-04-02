@@ -678,14 +678,24 @@ console.log(phoneNumber('Anaa'))
 
 /*TASK 5 🚀 
 // Write a function that will return all the airports in a given country  */
-
-
-
+function findAirport(country){
+  for (let i=0; i<airports.length; i++)
+  if (airports[i].country===country){
+    return airports[i].name
+  }
+}
+console.log(findAirport('United States'))
+/*will have to push maybe?*/
 /*TASK 6 🚀 
 // Write a function that takes and airport name and returns the airport code
 // find the code for the following airports: Al Baha Airport, Ambler Airport, Abuja International Airport*/
-
-
+function airportToCode(airport){
+  for (let i=0; i<airports.length; i++)
+  if (airports[i].name===airport){
+    return airports[i].code
+  }
+}
+console.log(airportToCode('Al Baha Airport'))
 
 /*TASK 7 🚀
 // Write a function that takes an airport code and returns the number of direct flights available */

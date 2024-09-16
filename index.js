@@ -10,7 +10,7 @@ const airports = [
       "country": "French Polynesia",
       "woeid": "12512819",
       "tz": "Pacific\/Midway",
-      "phone": "",
+      "phone": "696969",
       "type": "Airports",
       "email": "",
       "url": "",
@@ -566,61 +566,136 @@ const airports = [
 // let myFunction = function () {
 // console.log("Function was invoked!");
 // };
-// myFunction();
+myFunction = ()=> {return "hello World!";
+  }
+console.log(myFunction());
 
 
 // let anotherFunction = function (param) {
 //   return param;
 // };
 // anotherFunction("Example");
-
+anotherFunction= (x)=> {return x};
+console.log(anotherFunction('Hello There!'));
 
 // let add = function (param1, param2) {
 //   return param1 + param2;
 // };
 // add(1,2);
-
+add=(z,y)=> {return z+y};
+console.log(add(1,2));
 
 // let subtract = function (param1, param2) {
 //   return param1 - param2;
 // };
 // subtract(1,2);
-
+subtract=(q,p)=> {return q-p};
+console.log(subtract(1,2));
 
 /* Work out 💪 */
 /* TASK 1 🚀 
-// Dollars to Euros - write a function that will take an amount of dollars (USD) and change it  into euros (EUR) - with the current exchange rate 1 USD === .85 EUR */
+Dollars to Euros - write a function that will take an amount of dollars (USD) and change it  into euros (EUR) - with the current exchange rate 1 USD === .85 EUR*/
 
+ convertEUR=function(usd){
+  return usd*0.85;
+}
+console.log(convertEUR(1));
 
 /* TASK 2 🚀 
-// Take the function above a step further - you have dollars and you are visiting the following 5 countries: Britan, Germany, Turkey, Bulgaria and Ukraine - you need to write a function that will take a dollar amount, and a country and return the exchange rate for that country - the function should return a string that says `your exchange rate for dollarAmount dollars in country will be exchangeRate currencyInitals ` If the country is not on your list your string should return 'that country is not on your list'
-// 1 usd === 0.85 euro
-// 1 usd === 0.77 British Pounds
-// 1 usd === 6.96 Turkish Lira 
-// 1 usd === 1.66 Bulgarian Lev 
-// 1 usd === 27.7 Ukrainian hryvnia */
+Take the function above a step further - you have dollars and you are visiting the following 5 countries: Britan, Germany, Turkey, Bulgaria and Ukraine - you need to write a function that will take a dollar amount, and a country and return the exchange rate for that country - the function should return a string that says `your exchange rate for dollarAmount dollars in country will be exchangeRate currencyInitals ` If the country is not on your list your string should return 'that country is not on your list'
+1 usd === 0.85 euro
+ 1 usd === 0.77 British Pounds
+ 1 usd === 6.96 Turkish Lira 
+1 usd === 1.66 Bulgarian Lev 
+1 usd === 27.7 Ukrainian hryvnia */
+convertUSD=function(usd,country){
+  if (country==='Germany'){
+    let exchange=usd*0.85;
+    return `your exchange rate for ${usd} dollars in Germany will be ${exchange} euros `
+  }
+  else if(country==='British Pounds'){
+    let exchange=usd*0.77;
+    return `your exchange rate for ${usd} dollars in Britain will be ${exchange} Pounds `
+  }
+  else if (country==='Turkish Lira'){
+    let exchange=usd*6.96;
+    return `your exchange rate for ${usd} dollars in Turkey will be ${exchange} Lira `}
+  else if (country==='Bulgarian Lev'){
+      let exchange=usd*1.66
+      return `your exchange rate for ${usd} dollars in Bulgaria will be ${exchange} Lev `}
+  else if (country==='Ukrainian hryvnia'){
+        let exchange=usd*27.7;
+        return `your exchange rate for ${usd} dollars in the Ukraine will be ${exchange} Ukrainian hryvnia `}
+  else{ 
+    return 'that country is not on your list'}
+};
+console.log(convertUSD(10,'Turkish Lira'));
 
 
 /*TASK 3 🚀
 /// Write a function that takes an airport code and returns the city, country of that airport 
-// find the following codes AAA, ABZ, ABX, ABT, ACA */
+// find the following codes AAA, ABZ, ABX, ABT, ACA
+{
+      "code": "AAA",
+      "lat": "-17.3595",
+      "lon": "-145.494",
+      "name": "Anaa Airport",
+      "city": "Anaa",
+      "state": "Tuamotu-Gambier",
+      "country": "French Polynesia",
+      "woeid": "12512819",
+      "tz": "Pacific\/Midway",
+      "phone": "",
+      "type": "Airports",
+      "email": "",
+      "url": "",
+      "runway_length": "4921",
+      "elev": "7",
+      "icao": "NTGA",
+      "direct_flights": "2",
+      "carriers": "1"
+    },
+*/
 
-
+airportCode= function(code){
+  for(let i=0; i<airports.length; i++){
+    if (airports[i].code===code){
+      return `${airports[i].city}, ${airports[i].country}`
+    }
+}
+}
+console.log(airportCode('AAA'))
+/*Loop through arrays, else if*/
 /*TASK 4 🚀 
-// Write a function to that will find the phone number for an airport in a given city  */
-
-
+// Write a function to that will return the phone number for an airport when given a city  */
+function phoneNumber(city){
+  for(let i=0; i<airports.length; i++)
+  if(airports[i].city===city){
+    return airports[i].phone
+  }
+}
+console.log(phoneNumber('Anaa'))
 
 /*TASK 5 🚀 
 // Write a function that will return all the airports in a given country  */
-
-
-
+function findAirport(country){
+  for (let i=0; i<airports.length; i++)
+  if (airports[i].country===country){
+    return airports[i].name
+  }
+}
+console.log(findAirport('United States'))
+/*will have to push maybe?*/
 /*TASK 6 🚀 
 // Write a function that takes and airport name and returns the airport code
 // find the code for the following airports: Al Baha Airport, Ambler Airport, Abuja International Airport*/
-
-
+function airportToCode(airport){
+  for (let i=0; i<airports.length; i++)
+  if (airports[i].name===airport){
+    return airports[i].code
+  }
+}
+console.log(airportToCode('Al Baha Airport'))
 
 /*TASK 7 🚀
 // Write a function that takes an airport code and returns the number of direct flights available */
